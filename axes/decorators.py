@@ -360,10 +360,7 @@ def watch_login(func):
 
         if request.method == 'POST':
             # see if the login was successful
-            if request.is_ajax():
-                login_unsuccessful = is_ajax_login_failed(response)
-            else:
-                login_unsuccessful = is_login_failed(response)
+            login_unsuccessful = is_ajax_login_failed(response)
 
             user_agent = request.META.get('HTTP_USER_AGENT', '<unknown>')[:255]
             http_accept = request.META.get('HTTP_ACCEPT', '<unknown>')[:1025]
