@@ -307,7 +307,8 @@ def is_login_failed(response):
     return (
         response and
         not response.has_header('location') and
-        response.status_code != 302
+        response.status_code != 302 and
+        response.status_code != 200
     )
 
 def is_ajax_login_failed(response):
